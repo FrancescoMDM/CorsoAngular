@@ -1,0 +1,12 @@
+table{
+border: 2px solid darkslategrey ;
+}
+
+th{
+    padding: 5px;
+    border:1px solid ;
+    background: rgb(0, 0, 0);
+    color: green;
+    padding: 5px;
+
+}
