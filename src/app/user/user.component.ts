@@ -29,4 +29,7 @@ export class UserComponent implements OnInit {
     this.onSelectUser.emit(this.user);
     //this.userservice.deleteUser(this.user);
   }
+  prova(){
+    alert(this.user);
+  }
 }
