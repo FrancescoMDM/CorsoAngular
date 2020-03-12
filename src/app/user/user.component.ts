@@ -1,6 +1,6 @@
 import { UserService } from './../services/user.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { User } from '../interfaces/user';
+import { User } from '../classes/User';
 
 @Component({
   // inputs:[
@@ -32,11 +32,4 @@ export class UserComponent implements OnInit {
   prova(){
     alert(this.user);
   }
-
-
-
-
-
-
-  //275
 }

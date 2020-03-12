@@ -1,11 +1,13 @@
-<h1>User Mangment System </h1>
+<h1>User Mangment System<button class="btn-aggUser" (click)="newUser()" 
+    >NEW</button> 
+</h1>
+
 <div class="main">
     <div class="users">
-        <!-- (updateUser)="updateUser($event)"-->
         <app-users (updateUser)="updateUser($event)"></app-users>
     </div>
     <!--*ngIf="userSelected"-->
-    <div class="userDetail"  *ngIf="userSelected">
-        <app-user-detail class="userDetail" ></app-user-detail>
+    <div class="userDetail"  *ngIf="showFrom">
+        <app-user-detail class="userDetail"  [user]="userSelected"></app-user-detail>
     </div>
     </div>

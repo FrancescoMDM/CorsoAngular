@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from './interfaces/user';
+import { User } from './classes/User';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,16 @@ import { User } from './interfaces/user';
 })
 export class AppComponent {
   title="UMS";
-  userSelected: User;
+  showFrom: boolean =false;
+  userSelected: User = new User();
 
   updateUser(user: User){
+    this.showFrom = true;
     this.userSelected = user;
+  }
+  newUser(){
+    this.userSelected =new User();
+    this.showFrom = true;
   }
   
 }
