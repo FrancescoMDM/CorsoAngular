@@ -14,9 +14,9 @@ export class UserComponent implements OnInit {
 
 @Input("user-data") user: User;
 @Output('onDeleteUser') userDeleted = new EventEmitter();
-//@Output('onSelectUser') onSelectUser = new EventEmitter<User>();
+@Output('onSelectUser') onSelectUser = new EventEmitter();
 
-  constructor(private userservice: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -24,8 +24,8 @@ export class UserComponent implements OnInit {
     this.userDeleted.emit(this.user);
     //this.userservice.deleteUser(this.user);
   }
-  //updateUser(){
-    //this.onSelectUser.emit(this.user);
+  updateUser(){
+    this.onSelectUser.emit(this.user);
     //this.userservice.deleteUser(this.user);
-  //}
+  }
 }

@@ -13,4 +13,5 @@ export class AppComponent {
   updateUser(user: User){
     this.userSelected = user;
   }
+  
 }
