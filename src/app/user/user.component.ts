@@ -32,4 +32,11 @@ export class UserComponent implements OnInit {
   prova(){
     alert(this.user);
   }
+
+
+
+
+
+
+  //275
 }
