@@ -1,6 +1,7 @@
 import { UserService } from './../services/user.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../classes/User';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { User } from '../classes/User';
     styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit{
+
+    ;
 
     title = 'Users';
     users: User[] =[];

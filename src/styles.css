@@ -1,14 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.main{
-    width: 98%;
-    margin: auto;
-    vertical-align: top;
-}
 
-.users{
- float: left;
- width: 75%;
-}
 .userDetail{
     float: left;
 }
@@ -18,14 +9,6 @@
     font-weight: bold;
     padding: 5px;
      width: 80px;
-}
-.btn-aggUser{
-    background-color: blue;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px;
-     width: 80px;
-     margin-left:70px;
 }
 .btn-save{
     background-color: green;
