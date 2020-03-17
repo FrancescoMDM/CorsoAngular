@@ -7,12 +7,21 @@
 <td>{{user.age}}</td>
 
 <td>
-    <div class="row">
-        <div class="col-sm-6">
-            <button class="btn btn-primary btn-sm" (click)="updateUser()"> UPDATE </button> 
+    <div class="row">       
+         <div class="col-sm-4">
+            <button class="btn btn-info btn-sm w-50" (click)="showUserDetail()">
+                <fa-icon id="faInfo" [icon]="faInfo"></fa-icon>
+            </button>
         </div>
-        <div class="col-sm-6">
-            <button class="btn btn-danger btn-sm" (click)="deleteUser()"> DELETE </button>
+        <div class="col-sm-4">
+            <button class="btn btn-primary btn-sm" (click)="updateUser()">
+                <fa-icon id="faPencilRuler" [icon]="faPencilRuler"></fa-icon>
+            </button> 
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-danger btn-sm" (click)="deleteUser()">
+                <fa-icon id="faTrash" [icon]="faTrash"></fa-icon>
+            </button>
         </div>
     </div>
 </td>

@@ -1,13 +1,13 @@
-<table class=" table table-dark align-items-md-center ">
+<table class=" table table-dark  table-bordered border-red">
     <tr>
-        <th>Nome</th>
-        <th>Cognome</th>
-        <th>Codice Fiscale</th>
-        <th>Email</th>
-        <th>Telefono</th>
-        <th>Provincia</th>
-        <th>Age</th>
-        <th>Action</th>
+        <th class="text-center">Nome</th>
+        <th class="text-center">Cognome</th>
+        <th class="text-center">Codice Fiscale</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Telefono</th>
+        <th class="text-center">Provincia</th>
+        <th class="text-center">Age</th>
+        <th class="text-center">Action</th>
 
     </tr>
     <tr app-user  *ngFor="let user of users" [user-data]="user"

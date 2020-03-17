@@ -1,36 +1,49 @@
 <!-- {{ f.form.value | json}}-->
 <form class="userForm" #f="ngForm">
-    <input type="hidden" name="id" [(ngModel)]="user.id">
+    <input type="hidden" name="id" [(ngModel)]="this.user.id">
     <div class="form-group">
         <label for="firstname" >First Name </label>
-        <input  class="form-control" [(ngModel)]="user.name" name="firstname" id="firstname">
+        <input  class="form-control" [(ngModel)]="this.user.name" name="firstname" id="firstname">
     </div>
     <div class="form-group">
         <label for="lastname" >Last Name</label>
-        <input class="form-control" [(ngModel)]="user.lastname" name="lastname" id="lastname">
+        <input class="form-control" [(ngModel)]="this.user.lastname" name="lastname" id="lastname">
     </div>
     <div class="form-group">
         <label for="fiscalcode" >Fiscalcode </label>
-        <input class="form-control" [(ngModel)]="user.fiscalcode" name="fiscalcode" id="fiscalcode">
+        <input class="form-control" [(ngModel)]="this.user.fiscalcode" name="fiscalcode" id="fiscalcode">
     </div>
     <div class="form-group">
         <label for="email" >Email</label><br>
-        <input class="form-control" [(ngModel)]="user.email" type="email" name="email" id="email">
+        <input class="form-control" [(ngModel)]="this.user.email" type="email" name="email" id="email">
     </div>
     <div class="form-group">
         <label for="phone" >Phone</label><br>
-        <input class="form-control" [(ngModel)]="user.phone" name="phone" id="phone">
+        <input class="form-control" [(ngModel)]="this.user.phone" name="phone" id="phone">
     </div>
     <div class="form-group">
         <label for="province" >Province </label><br>
-        <input class="form-control" [(ngModel)]="user.province" name="province" id="province">
+        <input class="form-control" [(ngModel)]="this.user.province" name="province" id="province">
     </div>
     <div class="form-group">
         <label for="age" >Age</label><br>
-        <input class="form-control" [(ngModel)]="user.age" type="number" name="age" id="age">
+        <input class="form-control" [(ngModel)]="this.user.age" type="number" name="age" id="age">
     </div>
-    <div class="form-group form-footer" >
-        <button  class="btn btn-secondary" (click)="resetFrom(f.form)" >RESET</button>
-        <button  class="btn btn-success" (click) = "saveUser()" > SAVE</button>
+    <div class=" row form-footer" >
+        <div class="col-sm-4">
+        <button class="btn btn-primary w-75" (click)="backToUser()" > 
+            <fa-icon id="faArrowAltCircleLeft" [icon]="faArrowAltCircleLeft"></fa-icon>
+        </button>
     </div>
+        <div class="col-sm-4">
+        <button  class="btn btn-secondary w-75" (click)="resetFrom(f.form)" >
+            <fa-icon id="faUndoAlt" [icon]="faUndoAlt"></fa-icon>
+        </button>
+    </div>
+        <div class="col-sm-4">
+        <button  class="btn btn-success w-75" (click) = "saveUser()" >
+            <fa-icon id="faEdit" [icon]="faEdit"></fa-icon>
+        </button>
+    </div>
+</div>
 </form>

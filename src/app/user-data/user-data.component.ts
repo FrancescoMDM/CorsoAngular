@@ -1,7 +1,8 @@
 import { UserService } from './../services/user.service';
 import { User } from './../classes/User';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {  faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-data',
@@ -11,8 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDataComponent implements OnInit {
 
  user:User;
+ faArrowAltCircleLeft=faArrowAltCircleLeft;
 
-  constructor( private route:ActivatedRoute, private uerservice:UserService) { }
+  constructor( private route:ActivatedRoute, private uerservice:UserService,private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -23,5 +25,8 @@ export class UserDataComponent implements OnInit {
       }
       );
    }
+   backToUser(){  
+     this.router.navigate(['users'])
+    }
 
 }

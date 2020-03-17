@@ -2,7 +2,8 @@ import { UserComponent } from './../user/user.component';
 import { UserService } from './../services/user.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../classes/User';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { faUndoAlt, faEdit, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,6 +14,9 @@ export class UserDetailComponent implements OnInit {
 
   private userCopy: User;
   private __user:User;
+  faUndoAlt=faUndoAlt;
+  faEdit=faEdit;
+  faArrowAltCircleLeft=faArrowAltCircleLeft;
 
   @Input() set user(user: User ){
     this.__user=user;
@@ -21,7 +25,7 @@ export class UserDetailComponent implements OnInit {
   get user(){
     return this.__user;
   }
-  constructor(private userService :UserService,private route:ActivatedRoute) {  }
+  constructor(private userService :UserService,private route:ActivatedRoute, private router: Router) {  }
 
   ngOnInit(): void {
     
@@ -29,20 +33,21 @@ export class UserDetailComponent implements OnInit {
 
     this.route.params.subscribe(
       (params)=>{
-        alert(this.userService.getUser(params.id));
-        this.user = this.userService.getUser(+params.id);
+        this.__user =params.id? this.userService.getUser(+params.id):this.user;
       }
     );
+
 
    }
 
   saveUser(){
     //alert(this.user.id);
-    if(this.user.id > 0){
+    if(this.user.id >0){
       this.userService.updateUser(this.user)
     }else{
       this.userService.createUser(this.user);
     }
+    this.router.navigate(['users']);
   }
   resetFrom(form){
     if(this.user.id === 0){
@@ -52,4 +57,7 @@ export class UserDetailComponent implements OnInit {
       this.user=this.userCopy;
       }
   }
+  backToUser(){  
+    this.router.navigate(['users'])
+   }
 }
